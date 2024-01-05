@@ -1,0 +1,99 @@
+StatusUsuario
+	status
+	ativo
+
+
+TipoUsuario
+	tipo
+	ativo
+
+Pais
+	nome
+	ativo 
+
+Estado
+	nome
+	uf
+	ativo
+
+cidade
+	nome
+	estado_id
+	ativo
+
+
+Usuario
+	Nome
+	tipo_usuario
+	status_usuario
+
+
+Endereco,
+	Rua
+	Numero
+	Cidade
+	Bairro
+	Complemento
+
+
+Telefone
+	Numero
+	Tipo
+	Ativo
+
+UsuarioEndereco
+	usuario_id
+	endereco_id
+
+UsuarioTelefone
+	usuario_id
+	telefone_id
+
+
+
+Aparelho
+	Nome
+	Modelo
+	tipo_aparelho
+	status_aparelho
+
+
+TipoAparelho
+	tipo
+	ativo
+
+
+StatusAparelho
+	status
+	ativo	
+
+
+FormaPagamento
+	nome
+	ativo
+
+StatusPagamento
+	forma_pagamento_id
+	status
+	data_pagamento - nao necessario, varia com status
+
+StatusServico
+	nome
+	ativo
+
+TipoServico
+	nome
+	ativo
+
+Servico
+	usuario_id
+	aparelho_id
+	status_pagamento_id
+	data_servico
+	tipo_servico_id
+	status_servico_id
+	orderdeservico
+	observacao
+	
+
+	
