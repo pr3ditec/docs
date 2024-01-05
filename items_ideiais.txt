@@ -1,92 +1,154 @@
-StatusUsuario
+StatusUsuario -
 	status
+		ATIVO
+		INADIMPLENTE
+		REGULAR
+		INATIVO
+	ativo
+
+StatusCliente -
+	status
+		REGULAR
+		INADIMPLENTE
 	ativo
 
 
-TipoUsuario
+TipoUsuario -
 	tipo
+		ADMIN
+		EMPRESA - ex: preditec
 	ativo
 
-Pais
+Pais -
 	nome
 	ativo 
 
-Estado
+Estado -
 	nome
 	uf
 	ativo
 
-cidade
+cidade -
 	nome
 	estado_id
 	ativo
 
 
-Usuario
+Usuario -
 	Nome
 	tipo_usuario
 	status_usuario
 
+Cliente -
+	nome
+	status_cliente
 
-Endereco,
+
+Endereco -
+	nome
 	Rua
-	Numero
-	Cidade
+	Numero	
 	Bairro
+	cep
+	latitude
+	longitude
 	Complemento
+	cidade_id
 
 
-Telefone
-	Numero
-	Tipo
-	Ativo
-
-UsuarioEndereco
-	usuario_id
-	endereco_id
-
-UsuarioTelefone
-	usuario_id
-	telefone_id
-
-
-
-Aparelho
-	Nome
-	Modelo
-	tipo_aparelho
-	status_aparelho
-
-
-TipoAparelho
+TipoTelefone -
 	tipo
 	ativo
 
+Telefone -
+	Numero
+	tipo_telefone_id
+	Ativo
 
-StatusAparelho
-	status
-	ativo	
 
-
-FormaPagamento
-	nome
+TipoDocumento -
+	tipo
 	ativo
 
-StatusPagamento
+Documento -
+	numero
+	tipo_documento_id
+	ativo
+
+
+UsuarioEndereco -
+	usuario_id
+	endereco_id
+
+UsuarioTelefone-
+	usuario_id
+	telefone_id
+
+UsuarioDocumento-
+	usuario_id
+	documento_id
+
+ClienteDocumento-
+	cliente_id
+	documento_id
+
+ClienteTelefone-
+	cliente_id
+	telefone_id
+
+ClienteEndereco-
+	cliente_id
+	endereco_id
+
+
+TipoAparelho-
+	tipo
+		ex: AR SPLIT
+	usuario_id - usuario do tipo empresa
+	ativo
+
+Aparelho-
+	Nome
+	Modelo
+	tipo_aparelho
+	usuario_id - usuario do tipo empresa
+	ativo
+
+
+
+FormaPagamento-
+	nome
+		BOLETO
+		PIX
+		DINHEIRO
+		CARTÂO DEBITO
+		CARTÂO CREDITO
+	ativo
+
+StatusPagamento-
 	forma_pagamento_id
 	status
+		ATRASADO
+		EM ANDAMENTO
+		FINALIZADO
 	data_pagamento - nao necessario, varia com status
 
-StatusServico
+StatusServico-
 	nome
+		CONCLUIDO
+		CANCELADO - EMPRESA
+		CANCELADO - CLIENTE
+		ADIADO
 	ativo
 
-TipoServico
+TipoServico-
 	nome
+	usuario_id - usuario do tipo empresa
 	ativo
 
-Servico
-	usuario_id
+Servico-
+	cliente_id - não pode ser requirido
+	usuario_id - usuario do tipo empresa
 	aparelho_id
 	status_pagamento_id
 	data_servico
@@ -94,6 +156,13 @@ Servico
 	status_servico_id
 	orderdeservico
 	observacao
-	
+
+
+
+Login-
+	usuario_id
+	token
+
+
 
 	
